@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>BeltRank</title>
+  <link href="https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./footer.css">
+</head>
+
+<body>
+<div id="app">
+	<div class="title-container">
+		<div>
+			<h3 class="title">
+				Belt Ranking
+			</h3>
+		</div>
+
+		<div class="search-wrapper">
+			<label>Search for lock:</label>
+			<input type="text" v-model="search" placeholder="Search lock..">/>
+				
+		</div>
+		<br>
+		<div class="filters">
+			<span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">ALL</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'White' }" v-on:click="setFilter('White')">White</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Yellow' }" v-on:click="setFilter('Yellow')">Yellow</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Orange' }" v-on:click="setFilter('Orange')">Orange</span>
+			
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Green' }" v-on:click="setFilter('Green')">Green</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Blue' }" v-on:click="setFilter('Blue')">Blue</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Purple' }" v-on:click="setFilter('Purple')">Purple</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Brown' }" v-on:click="setFilter('Brown')">Brown</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Red' }" v-on:click="setFilter('Red')">Red</span>
+			<span class="filter" v-bind:class="{ active: currentFilter === 'Black' }" v-on:click="setFilter('Black')">Black</span>
+		</div>
+	</div>
+
+	<transition-group class="projects" name="projects" >
+		<div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
+			<div class="project-image-wrapper">
+				<img class="project-image" v-bind:src="project.image">
+				<div class="gradient-overlay"></div>
+				<div class="circle" :style="{ 'background-color': project.category }">
+					<span class="project-title">{{project.title}}</span>
+				</div>
+			</div>
+		</div>
+	</transition-group>
+</div>
+
+
+<section>
+  <h1>Credit and other info</h1>
+  <!--<h3>Hover over the circle below</h3>-->
+</section>
+
+<div class="footer">
+  <div id="button"></div>
+	<div id="container">
+		<div id="cont">
+			<div class="footer_center">
+				<h3><a href="https://www.reddit.com/r/lockpicking/wiki/beltranking" style="color:white">Credit for belt ranking and other details</a> </h3>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>
