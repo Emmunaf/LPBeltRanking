@@ -18,12 +18,13 @@
 				Belt Ranking
 			</h3>
 		</div>
-
-		<div class="search-wrapper">
-			<label>Search for lock:</label>
-			<input type="text" v-model="search" placeholder="Search lock..">/>
-				
-		</div>
+		
+		<v-layout class="wrapme" column align-center justify-center>
+			<div :class="['search-bar', searchIsFocused ? 'elevation-6' : 'elevation-3']">
+				<!--<label>Search for lock:</label>-->
+				<input type="text" v-model="search" placeholder="Filter locks by name..." name="search">
+			</div>
+		</v-layout>
 		<br>
 		<div class="filters">
 			<span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">ALL</span>
@@ -41,7 +42,7 @@
 	</div>
 
 	<transition-group class="projects" name="projects" >
-		<div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
+		<div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in filteredList">
 			<div class="project-image-wrapper">
 				<img class="project-image" v-bind:src="project.image">
 				<div class="gradient-overlay"></div>
@@ -72,6 +73,7 @@
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.1.1/vuetify.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
 <script  src="./script.js"></script>
 

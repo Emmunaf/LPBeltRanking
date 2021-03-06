@@ -2,6 +2,7 @@ new Vue({
   el: '#app',
   data: {
 	search: '',
+	searchIsFocused: false,
     currentFilter: 'ALL',
     projects: [
     { title: "Master Lock #1", image: "https://cdn.masterlock.com/product/375/MLCOM_PRODUCT_1.jpg", category: 'White' },

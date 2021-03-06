@@ -125,7 +125,7 @@ font-size:16pt
 }
 
 
-
+/*
 .search-wrapper {
     position: relative;
     label {
@@ -156,5 +156,34 @@ font-size:16pt
           color: rgba(0,0,0,.50);
           font-weight: 100;
       }
+}*/
+
+/* search br*/
+.wrapme {
+	/*width: 70%;*/
+	max-width: 650px;
+}
+.search-bar {
+	/*margin-top: 5em;*/
+	background: #fff;
+	padding: 1em;
+	width: 100%;
+	border-radius: 10em;
+	
+	transition: box-shadow 300ms ease;
 }
 
+.search-bar input {
+	width: 100%;
+	border-style: none;
+		
+	color: inherit;
+	background-color: transparent;
+
+	padding-left: 1em;
+	font-size: 1.3em;
+}
+
+.search-bar input:focus {
+	outline: none;
+}
