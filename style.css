@@ -5,7 +5,7 @@
 
 html,body {
 	margin:0;
-	font-family: 'Dawning of a New Day', cursive;
+	font-family: fantasy;
 }
 
 .title-container {
@@ -169,15 +169,22 @@ font-size:16pt
 /* search br*/
 .wrapme {
 	/*width: 70%;*/
-	max-width: 650px;
+	/*max-width: 650px;*/
+	width: 40vw;
+}
+
+@media (max-width: 480px) {
+	.wrapme {
+		width: 80vw;
+	}
 }
 .search-bar {
 	/*margin-top: 5em;*/
 	/*background: #fff;*/
-	background: #fdf1f1;
+	background: #e3dbdb;
 	margin-top: 0.5em;
 	padding: 1em;
-	width: 100%;
+	/*width: 100%;*/
 	border-radius: 10em;
 	
 	transition: box-shadow 300ms ease;
