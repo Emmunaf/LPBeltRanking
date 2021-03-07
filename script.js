@@ -15,7 +15,7 @@ new Vue({
     { title: "Abloy Classic †***", image: "https://images-na.ssl-images-amazon.com/images/I/71SESn1Jg7L._AC_SL1500_.jpg", category: 'Red' },
     { title: "Abloy Protec2", image: "https://images-na.ssl-images-amazon.com/images/I/61Xi7Qpr8TL._SL1080_.jpg", category: 'Black' },
     { title: "ASSA dp4400", image: "https://static-mpc-spear-production.assaabloy.com/asfe//Fetchfile.aspx?id=47998&ft=.jpg&mw=400", category: 'Black' },
-    { title: "ASSA Twin 6000", image: "https://lh3.googleusercontent.com/proxy/kicp6sD6OcHJld4IlrPEsv7mF2f_FqYvJDEfyTgLnYW4okbfuxBgTSsOb8Bqxm4Q8AAxfLq9qzLTbjL_7ZGzhiBWVWO8tOl8o2N42Wv73kWqXS1knkaNVXtuFrCKX4Zgd_Wa586EmR3YTy3mc51Nm8E", category: 'Black' }] },
+    { title: "ASSA Twin 6000", image: "http://lockwiki.com/images/thumb/8/8e/ASSA_Twin_cylinder.jpg/240px-ASSA_Twin_cylinder.jpg", category: 'Black' }] },
 
 
 
