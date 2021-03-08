@@ -4,6 +4,7 @@ new Vue({
 	search: '',
 	searchIsFocused: false,
     currentFilter: 'ALL',
+    allLocks: [],
     projects: [
     { title: "Master Lock #1", image: "https://cdn.masterlock.com/product/375/MLCOM_PRODUCT_1.jpg", category: 'White' },
     { title: "Abus 55/30", image: "https://www.abus.com/var/ImagesPIM/abus_kg/Vorhangschloesser/Messingschl%C3%B6sser/55/02854_55_30_a_3.jpg", category: 'Yellow' },
@@ -25,14 +26,33 @@ new Vue({
     },
      setTitleFilter: function (filter) {
       this.titleFilter = filter;
-    } 
+    },
+    getLocksFromAPI() {
+		//console.log("Req performed");
+		axios.get(`./test.json`).then(response => {//./getLocksAPI.php
+			this.allLocks = response.data.message;
+			console.log(this.allLocks);
+			//Other/filterinfo
+			//this.otherInfo = response.data.other;
+			//console.log(this.otherInfo);
+		})
+	} 
   },
   computed: {
     filteredList() {
       return this.projects.filter(project => {
         return project.title.toLowerCase().includes(this.search.toLowerCase())
       })
+    },
+    filteredLocks() {
+      return this.allLocks.filter(lock => {
+        return lock.Model.toLowerCase().includes(this.search.toLowerCase())
+      })
     }
+    
+  }, //computed
+  mounted() {
+	  this.getLocksFromAPI();
   }
   
 });
