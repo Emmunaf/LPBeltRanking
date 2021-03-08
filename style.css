@@ -5,9 +5,24 @@
 
 html,body {
 	margin:0;
-	font-family: fantasy;
+	font-family: 'ROBOTO';/*fantasy;*/
+	background-color: #e4e4e2;
 }
 
+.row-cards{
+	margin-top: 1rem;
+}
+
+@media (min-width: 800px) {
+	.row-cards{
+		margin-right: clamp(0.5em, 1.2em, 1.5em);
+		margin-left: clamp(0.5em, 1.2em, 1.5em);
+	}
+}
+
+.ccard{
+	margin-left: clamp(1em, 1.2em, 1.5em);
+}
 .title-container {
 	display:flex;
 	flex-direction:column;
@@ -30,9 +45,13 @@ html,body {
 	background-color: #FF4500;
 }
 .project-title {
-font-size:16pt	
+	font-size:16pt	
 }
 
+.image-container{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .filter {
 	font-family:arial;
 	padding: 6px 6px;
