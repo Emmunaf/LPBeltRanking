@@ -12,8 +12,9 @@ section{
 }
 .footer #button{
 	width:35px;
-	height:35px;
-	border: #727172 12px solid;
+	/*height:35px;*/
+	/*border: #727172 12px solid;*/
+	border: #727172 5px solid;
 	border-radius:35px;
 	margin:0 auto;
 	position:relative;

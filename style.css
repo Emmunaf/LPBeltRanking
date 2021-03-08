@@ -11,6 +11,9 @@ html,body {
 
 .row-cards{
 	margin-top: 1rem;
+	margin-bottom: 2.5rem;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
 }
 
 @media (min-width: 800px) {
@@ -21,7 +24,8 @@ html,body {
 }
 
 .ccard{
-	margin-left: clamp(1em, 1.2em, 1.5em);
+	/*margin-left: clamp(1em, 1.2em, 1.5em);*/
+	margin-bottom: 1em;
 }
 .title-container {
 	display:flex;

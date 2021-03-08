@@ -62,13 +62,14 @@
 
   
   <!-- First TEST card-->
- 
 <div class="row row-cards">
+
 <div class="max-w-6xl mx-auto ccard" v-for="project in filteredList" v-bind:key="project.title" v-if="currentFilter === project.category || currentFilter === 'ALL'" >
 <div class="flex items-center justify-center "><!--min-h-screen-->
     <div class="max-w-xs pb-2"><!-- w-full-->
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
             <div class="image-container bg-center h-48 p-3" v-bind:style="{'background-image': 'url('+project.image+') '}">
+				
                 <div class="flex justify-end text-gray-100">
           
 				  <!-- Star rating
