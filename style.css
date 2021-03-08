@@ -18,8 +18,8 @@ html,body {
 
 @media (min-width: 800px) {
 	.row-cards{
-		margin-right: clamp(0.5em, 1.2em, 1.5em);
-		margin-left: clamp(0.5em, 1.2em, 1.5em);
+		margin-right: clamp(2.5em, 2.8em, 3.5em);
+		margin-left: clamp(2.5em, 2.8em, 3.5em);
 	}
 }
 
