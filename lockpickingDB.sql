@@ -1,36 +1,33 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
--- https://www.phpmyadmin.net/
+-- version 4.0.10deb1ubuntu0.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Creato il: Mar 07, 2021 alle 23:23
--- Versione del server: 10.4.14-MariaDB
--- Versione PHP: 7.4.11
+-- Host: localhost
+-- Generato il: Mar 08, 2021 alle 09:31
+-- Versione del server: 5.5.62-0ubuntu0.14.04.1
+-- Versione PHP: 5.5.9-1ubuntu4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `lockpickingDB`
+-- Database: `lockpicking`
 --
-CREATE DATABASE IF NOT EXISTS `lockpickingDB` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `lockpickingDB`;
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `lock`
+-- Struttura della tabella `locks`
 --
 
-CREATE TABLE `locks` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `locks` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Model` varchar(80) NOT NULL,
   `ImageURL` text NOT NULL,
   `NumPin` int(11) DEFAULT NULL,
@@ -39,8 +36,9 @@ CREATE TABLE `locks` (
   `Price` float NOT NULL,
   `Note` text NOT NULL,
   `Belt` varchar(12) NOT NULL,
-  `LockwikiURL` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `LockwikiURL` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=22 ;
 
 --
 -- Dump dei dati per la tabella `locks`
@@ -64,28 +62,9 @@ INSERT INTO `locks` (`ID`, `Model`, `ImageURL`, `NumPin`, `Manufacturer`, `Count
 (16, 'BSS', '', NULL, 'BSS', 'Germany', 15, '', 'Yellow', ''),
 (17, 'Burg Wächter Atlantik', 'https://www.burg.biz/wp-content/uploads/2016/06/Atlantic-SC217FNI-1.jpg', NULL, 'Burg-Wächter', 'Germany', 15, '', 'Yellow', ''),
 (18, 'Burg Wächter C-Line', 'https://www.burg.biz/wp-content/uploads/2016/06/Zylinder_Vorhangschloss_222_C-Line-01-1.jpg', NULL, 'Burg-Wächter', 'Germany', 15, '', 'Yellow', ''),
-(19, 'Burg Wächter Karat', 'https://www.burg.biz/wp-content/uploads/2020/05/Tresor-Karat-MT-660-EFP-von-BURG-W%C3%84CHTER.jpg', NULL, 'Burg-Wächter', 'Germany', 1000, '', 'Yellow', '');
-
---
--- Indici per le tabelle scaricate
---
-
---
--- Indici per le tabelle `locks`
---
-ALTER TABLE `locks`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT per le tabelle scaricate
---
-
---
--- AUTO_INCREMENT per la tabella `locks`
---
-ALTER TABLE `locks`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-COMMIT;
+(19, 'Burg Wächter Karat', 'https://www.burg.biz/wp-content/uploads/2020/05/Tresor-Karat-MT-660-EFP-von-BURG-W%C3%84CHTER.jpg', NULL, 'Burg-Wächter', 'Germany', 1000, '', 'Yellow', ''),
+(20, 'Burg Wächter Look', 'https://images-na.ssl-images-amazon.com/images/I/717FUap99YL._AC_SL1500_.jpg', NULL, 'Burg-Wächter', 'Germany', 10, '', 'Yellow', ''),
+(21, 'Burg Wächter SecuLock', 'https://images-na.ssl-images-amazon.com/images/I/61S4oNm0I-L._AC_SL1282_.jpg', NULL, 'Burg-Wächter', 'Germany', 15, '', 'Yellow', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
