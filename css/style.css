@@ -27,12 +27,17 @@ html,body {
 	/*margin-left: clamp(1em, 1.2em, 1.5em);*/
 	margin-bottom: 1em;
 }
+
+.model-name{
+    width: 200px;
+}
 .title-container {
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
 	align-items:center;
 }
+
 
 .title {
 	font-family: 'Karate', cursive;
