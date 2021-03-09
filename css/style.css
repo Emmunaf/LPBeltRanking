@@ -1,6 +1,6 @@
 @font-face {
     font-family: Karate;
-    src: url(./fonts/Karate.ttf);
+    src: url(../fonts/Karate.ttf);
 }
 
 html,body {
@@ -63,6 +63,10 @@ html,body {
 .image-container{
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.belt-filters{
+    margin-bottom: 2rem;
 }
 .filter {
 	font-family:arial;
