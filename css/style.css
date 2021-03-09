@@ -28,6 +28,9 @@ html,body {
 	margin-bottom: 1em;
 }
 
+.circle-text-shadow{
+    text-shadow:1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
 .model-name{
     width: 200px;
 }
@@ -209,7 +212,7 @@ html,body {
 .search-bar {
 	/*margin-top: 5em;*/
 	/*background: #fff;*/
-	background: #e3dbdb;
+	background: #b9bcba;/*#e3dbdb;*/
 	margin-top: 0.5em;
 	padding: 1em;
 	/*width: 100%;*/
