@@ -59,11 +59,50 @@
 			</div>
 		</div>
 	-->
+	<!-- Sidebar filter start-->
+	<v-app id="vapp"><!-- for vuetify-->
+		<!--<div id="btn-toggle" class="btn btn-primary btn-ftoggle p-2 m-2"><i class="fa fa-sliders" aria-hidden="true"></i></div>-->
+	
+		<div class="row main-row">
+			<div id="cmenu" class="col-sm2 col-menu pl-4 v-application v-application--is-ltr d-none d-lg-block"><!-- hide on smaller screen d-none d-lg-block-->
+				<div class="menu-wrap">
+					<div class="menu">
+						<!--<h4 class="filter-title text-center"><i class="fa fa-sliders" aria-hidden="true"></i></h4>-->
+						<v-container fluid>
+						  <div class="filterWrapper">
+						  <!-- close icon-->
+						  <a id="btn-fclose" class="btn-ftoggle">
+							<i aria-hidden="true" class="fa fa-close"></i> Filtri</a>
+							<ul class="form-fields mr-8">
+							  <li class="field check-round slide">
+								<v-slider
+								  v-model="maxPrice.val"
+							  max="100"
+							  min="0"
+								  :label="maxPrice.label"
+							  :hint="maxPrice.hint"
+								  :thumb-color="maxPrice.color"
+								  thumb-label="always"
+								></v-slider>
+							  </li>
+							
+							<li class='field' >
+								<v-switch dense height='12' label='Test test'></v-switch>
+							 </li>
+							  
+							</ul>  
+						  </div>
+						</v-container>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-lg-10 col-cards">
+			<!-- Sidebar filter partial end. See below-->
 <!-- LOCK LIST START -->
 <div class="row row-cards">
 
 <div class="max-w-6xl mx-auto ccard" v-for="lock in filteredLocks" v-bind:key="lock.Model" v-if="currentFilter === lock.Belt || currentFilter === 'ALL'" >
-<div class="flex items-center justify-center "><!--min-h-screen-->
+<div class="flex justify-center "><!--min-h-screen;  deleted because missalignment:items-center;-->
     <div class="max-w-xs pb-2"><!-- w-full-->
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
             <div class="image-container bg-center h-48 p-3" v-bind:style="{'background-image': 'url('+lock.ImageURL+') '}">
@@ -130,6 +169,12 @@
 </div>
 <!-- LOCK LIST END -->
   
+<!-- sidefilter test-->
+</div>
+</div>
+</div>
+</v-app>
+<!-- end sidefilter test-->
 
 	<!--</transition-group>-->
 </div>
@@ -155,11 +200,12 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script>-->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.1.1/vuetify.js'></script>
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.1.1/vuetify.js'></script>-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
-<script  src="./js/script.js"></script>
+<script  src="./js/script.js?v=0.1"></script>
 
 </body>
 </html>
