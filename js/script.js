@@ -21,6 +21,7 @@ new Vue({
   methods: {
     setFilter: function (filter) {
       this.currentFilter = filter;
+      this.zenMode=false;//When new category is selected, we needto reegister callback again. Workaround for now
     },
      setTitleFilter: function (filter) {
       this.titleFilter = filter;
@@ -49,7 +50,7 @@ new Vue({
 				 timeouted = setTimeout(function(){
 					 $.undim();   
 					$('.back').dimBackground();
-				}, 140)
+				}, 14)
 				//$('.back').dimBackground();
 
 			})

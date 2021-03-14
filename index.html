@@ -12,14 +12,14 @@
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
 <!--<link rel="stylesheet" href="./css/styleResultsList.css?v=0.1">-->
 
-<link rel="stylesheet" href="./css/style.css?v=0.1">
+<link rel="stylesheet" href="./css/style.css?v=0.102">
 <link rel="stylesheet" href="./css/footer.css">
-<link rel="stylesheet" href="./css/flip.css">
+<link rel="stylesheet" href="./css/flip.css?v=0.101">
 
 </head>
 
 <body>
-<div id="app" class="theme--light">
+<div id="app" :class="[{ 'theme--light':  $vuetify.theme.dark === false  , 'theme--dark':  $vuetify.theme.dark === true  }]" >
 	<div class="title-container">
 		<div class="title-header">
 			<h3 class="title">
@@ -66,7 +66,7 @@
 		<!--<div id="btn-toggle" class="btn btn-primary btn-ftoggle p-2 m-2"><i class="fa fa-sliders" aria-hidden="true"></i></div>-->
 	
 		<div class="row main-row">
-			<div id="cmenu" class="col-sm2 col-menu pl-4 v-application v-application--is-ltr d-none d-lg-block"><!-- hide on smaller screen d-none d-lg-block-->
+			<div id="cmenu" class="col-sm2 col-menu pl-2 v-application v-application--is-ltr d-none d-lg-block"><!-- hide on smaller screen d-none d-lg-block-->
 				<div class="menu-wrap">
 					<div class="menu">
 						<!--<h4 class="filter-title text-center"><i class="fa fa-sliders" aria-hidden="true"></i></h4>-->
@@ -102,9 +102,9 @@
 							 <li class='field' >
 							  <v-switch
 								v-model="$vuetify.theme.dark"
-								hint="Theme"
+								hint="Switch Theme"
 								inset
-								label="Theme Dark"
+								label="Dark Theme"
 								persistent-hint
 							  ></v-switch>
 							  </li>
@@ -317,7 +317,7 @@ $(document).keyup(function(e) {
     }
 });
 </script>
-<script  src="./js/script.js?v=0.104"></script>
+<script  src="./js/script.js?v=0.106"></script>
 
 </body>
 </html>

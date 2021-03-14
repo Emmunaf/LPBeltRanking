@@ -6,10 +6,14 @@
 html,body {
 	margin:0;
 	font-family: 'ROBOTO';/*fantasy;*/
-	background-color: #f3f3f2;/*#e4e4e2;*/
 }
 
-
+#app.theme--light{
+	background-color: #f3f3f2;/*#e4e4e2;*/
+}
+#app.theme--dark{
+	background-color: #b1b1b1;;/*#e4e4e2;*/
+}
 #vapp{
 	box-shadow: 0px 1px 3px 0px #0000006b;
     background-color: #dfdfdf;
