@@ -10,8 +10,8 @@ new Vue({
     filterCatInfo:[],
 	ex1: { label: 'Raggio', val: 35, color: 'orange darken-3' },
 	maxPrice: { label: 'Price', val: 400, color: 'red', hint:"€" },
-	hideNAprice: { label: 'Hide if price is N.A.', val: false },
-	hideNAvideo: { label: 'Hide if no video', val: false },
+	hideNAprice: { label: 'Known price', val: false },
+	hideNAvideo: { label: 'With video', val: false },
 	zenMode: false,
     
     },//end data
@@ -92,7 +92,6 @@ new Vue({
   }, //computed
   mounted() {
 	  this.getLocksFromAPI();	  
-
   }//end mounted
   
 });
