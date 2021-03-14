@@ -74,7 +74,7 @@
 						  <div class="filterWrapper">
 						  <!-- close icon-->
 						  <a id="btn-fclose" class="btn-ftoggle">
-							<i aria-hidden="true" class="fa fa-close"></i> Filtri</a>
+							<i aria-hidden="true" class="fa fa-close"></i> Settings</a>
 							<ul class="form-fields mr-8">
 							  <li class="field check-round slide">
 								<v-slider
@@ -89,16 +89,26 @@
 							  </li>
 							
 							<li class='field' >
-								<v-switch dense v-model="hideNAprice.val" height='12' :label="hideNAprice.label" ></v-switch>
+								<v-switch inset v-model="hideNAprice.val" height='12' :label="hideNAprice.label" ></v-switch>
 							 </li>
 							 
 							 <li class='field' >
-								<v-switch dense v-model="hideNAvideo.val" height='12' :label="hideNAvideo.label" ></v-switch>
+								<v-switch inset v-model="hideNAvideo.val" height='12' :label="hideNAvideo.label" hint="Hide if no videos" ></v-switch>
 							 </li>
 							  
 							  <li class='field' >
-								<v-switch dense v-model="zenMode" height='12' label="Zen mode" ></v-switch>
+								<v-switch inset v-model="zenMode" height='12' label="Zen mode" ></v-switch>
 							 </li>
+							 <li class='field' >
+							  <v-switch
+								v-model="$vuetify.theme.dark"
+								hint="Theme"
+								inset
+								label="Theme Dark"
+								persistent-hint
+							  ></v-switch>
+							  </li>
+							  
 							</ul>  
 						  </div>
 						</v-container>
