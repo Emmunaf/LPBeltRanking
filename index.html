@@ -14,6 +14,8 @@
 
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/footer.css">
+<link rel="stylesheet" href="./css/flip.css">
+
 </head>
 
 <body>
@@ -103,6 +105,8 @@
 
 <div class="max-w-6xl mx-auto ccard" v-for="lock in filteredLocks" v-bind:key="lock.Model" v-if="currentFilter === lock.Belt || currentFilter === 'ALL'" >
 <div class="flex justify-center "><!--min-h-screen;  deleted because missalignment:items-center;-->
+	<div class="flip">
+		<div class="front">
     <div class="max-w-xs pb-2"><!-- w-full-->
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
             <div class="image-container bg-center h-48 p-3" v-bind:style="{'background-image': 'url('+lock.ImageURL+') '}">
@@ -164,14 +168,20 @@
 	</div>
 
     </div>
+    </div>
+	</div>
+    </div><!-- Front flip -->
+    <div class="back">
+	
+	</div><!-- Back flip -->
+    </div><!--flip-->
 </div>
 </div>
 </div>
 <!-- LOCK LIST END -->
   
 <!-- sidefilter test-->
-</div>
-</div>
+
 </div>
 </v-app>
 <!-- end sidefilter test-->
