@@ -9,9 +9,10 @@ new Vue({
     
     filterCatInfo:[],
 	ex1: { label: 'Raggio', val: 35, color: 'orange darken-3' },
-	maxPrice: { label: 'Price', val: 100, color: 'red', hint:"€" },
-	hideNAprice: { label: 'Hide N/A price', val: false },
-	switch2: true,
+	maxPrice: { label: 'Price', val: 400, color: 'red', hint:"€" },
+	hideNAprice: { label: 'Hide if price is N.A.', val: false },
+	hideNAvideo: { label: 'Hide if no video', val: false },
+	zenMode: false,
     
     },//end data
     
@@ -32,10 +33,46 @@ new Vue({
 			//Other/filterinfo
 			//this.otherInfo = response.data.other;
 			//console.log(this.otherInfo);
+			
+                
 		})
-	} 
-  },
-  
+	},
+	
+	setZenMode(){		
+		$('.flip')
+			.mouseenter(function(e) {
+				var timeouted=null;
+				clearTimeout(timeouted);
+				//$(this).dimBackground();
+				//console.log("Detected");
+				 $.undim();   
+				 timeouted = setTimeout(function(){
+					 $.undim();   
+					$('.back').dimBackground();
+				}, 140)
+				//$('.back').dimBackground();
+
+			})
+			.mouseleave(function() {
+				$.undim();        
+			});
+	},
+   unsetZenMode(){
+	   $('.flip').unbind("mouseenter");
+   }
+  },//end methods
+  watch: {
+      zenMode(enabled){
+        //called whenever switch1 changes
+        console.log("ZenMode:"+enabled);
+        if(enabled){
+			this.setZenMode();
+		}
+		else{
+			this.unsetZenMode();
+		}
+      },//end zenmode
+  },//end watch
   computed: {
     
     filteredLocks() {
@@ -43,14 +80,19 @@ new Vue({
         //return lock.Model.toLowerCase().includes(this.search.toLowerCase())
         const selectedModels = lock.Model.toLowerCase().includes(this.search.toLowerCase());
         const selectedPrice = (lock.Price <= this.maxPrice.val) || (lock.Price.toUpperCase() =="N.A." && !this.hideNAprice.val);//maxPrice
-        return (selectedModels && selectedPrice);
+        
+        const selectedVideos = lock.VideoURL || !this.hideNAvideo.val;
+        
+        
+        return (selectedModels && selectedPrice && selectedVideos);
       })
     },
     //Next comuted method
     
   }, //computed
   mounted() {
-	  this.getLocksFromAPI();
-  }
+	  this.getLocksFromAPI();	  
+
+  }//end mounted
   
 });
