@@ -41,6 +41,9 @@ html,body {
 	margin-bottom: 1em;
 }
 
+.model-summary{
+	max-width: 250px;
+}
 .circle-text-shadow{
     text-shadow:1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
