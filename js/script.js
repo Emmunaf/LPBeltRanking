@@ -10,8 +10,8 @@ new Vue({
     filterCatInfo:[],
 	ex1: { label: 'Raggio', val: 35, color: 'orange darken-3' },
 	maxPrice: { label: 'Price', val: 100, color: 'red', hint:"€" },
-	switch1: true,
-	switch2: false,
+	hideNAprice: { label: 'Hide N/A price', val: false },
+	switch2: true,
     
     },//end data
     
@@ -42,7 +42,7 @@ new Vue({
       return this.allLocks.filter(lock => {
         //return lock.Model.toLowerCase().includes(this.search.toLowerCase())
         const selectedModels = lock.Model.toLowerCase().includes(this.search.toLowerCase());
-        const selectedPrice = (lock.Price <= this.maxPrice.val) || (lock.Price.toUpperCase() =="N.A.");//maxPrice
+        const selectedPrice = (lock.Price <= this.maxPrice.val) || (lock.Price.toUpperCase() =="N.A." && !this.hideNAprice.val);//maxPrice
         return (selectedModels && selectedPrice);
       })
     },
