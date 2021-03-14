@@ -19,10 +19,11 @@ function filter_lock_info($lockInfo){
     $lockInfo["NumPin"] = htmlspecialchars($lockInfo["NumPin"], ENT_COMPAT | ENT_HTML401, 'UTF-8');
     $lockInfo["Manufacturer"] = htmlspecialchars($lockInfo["Manufacturer"], ENT_COMPAT | ENT_HTML401, 'UTF-8');
     $lockInfo["Country"] = htmlspecialchars($lockInfo["Country"], ENT_COMPAT | ENT_HTML401, 'UTF-8');
-    if(!$lockInfo["Price"] ){ // fallback to default generic
+    if(!$lockInfo["Price"] || $lockInfo["Price"] == 0){ // fallback to default generic
 		$lockInfo["Price"] = "N.A.";
+	} else{
+		$lockInfo["Price"] = number_format($lockInfo["Price"], 2);
 	}
-    $lockInfo["Price"] = htmlspecialchars_decode($lockInfo["Price"], ENT_QUOTES);
     $lockInfo["Note"] = htmlspecialchars($lockInfo["Note"], ENT_COMPAT | ENT_HTML401, 'UTF-8');
     $lockInfo["Belt"] = htmlspecialchars($lockInfo["Belt"], ENT_COMPAT | ENT_HTML401, 'UTF-8');
     $lockInfo["LockwikiURL"] = htmlspecialchars($lockInfo["LockwikiURL"], ENT_COMPAT | ENT_HTML401, 'UTF-8');
