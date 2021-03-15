@@ -230,13 +230,13 @@
 		<div>
 		-->
 	 <div class="flex-1 inline-flex items-center">
-	   <p v-if="lock.AmazonURL" class="text-sm text-gray-700"><i class="fa fa-globe"></i> 
+	   <p v-if="lock.AmazonURL" class="text-sm text-gray-700"><i class="fa fa-shopping-cart"></i> 
 		<a v-if="lock.AmazonURL" :href="lock.AmazonURL" target="_blank">
 		Amazon</a>
 		</p>
 	   <p v-if="lock.LockwikiURL && lock.AmazonURL" >|</p>
 		<p class="text-sm text-green-700">
-			<i v-if="lock.LockwikiURL" class="fa fa-globe p-1"></i>
+			<i v-if="lock.LockwikiURL" class="fa fa-info p-1"></i>
 			<a v-if="lock.LockwikiURL" :href="lock.LockwikiURL" target="_blank">
 				LockWiki
 			</a>
@@ -256,7 +256,15 @@
 			</a>
 		</p>
 	</div>
-
+	
+	<div class="flex-1 inline-flex items-center">
+	   <p v-if="lock.ManufacturerPageURL" class="text-sm text-gray-700"><i class="fa fa-globe"></i> 
+		<a v-if="lock.ManufacturerPageURL" :href="lock.ManufacturerPageURL" target="_blank">
+		Product page</a>
+		</p>
+	   
+	</div>
+	
     </div>
     </div>
 	</div>
