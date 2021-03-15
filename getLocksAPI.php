@@ -63,6 +63,7 @@ function get_locks(){
 									locks
 								WHERE
 									1
+								ORDER BY ID
 								");//ORDER BY D;
 	
 		if (!$stmt) {
