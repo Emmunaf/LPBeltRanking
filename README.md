@@ -24,8 +24,9 @@ At the time of writing you can't set any parameters and the only endpoint is *ge
 
 # TODOs
 - [ ] Fill the database with all the ranked locks available [here](https://docs.google.com/spreadsheets/d/1JvskJMIl55mVVh53jgaWDFmwJz-KvHDWXVmvYsINB2g/edit#gid=0)
-- [ ] Add the *new lock request* feature
+- [ ] Add the *new lock request*/*update request* features
 - [ ] Add *authentication* and *users roles*
 - [ ] Add *panel for moderators*
 - [ ] Extend API
 - [ ] Add *per-user tracking* capabilities to keep track of progress (picked/unpicked locks) 
+- [ ] Add sidebar filters on mobile version
